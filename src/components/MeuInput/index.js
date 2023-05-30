@@ -17,14 +17,14 @@ const MeuInput = (props) => {
 
 const style = StyleSheet.create({
     input: {
-        borderWidth: 1,
-        marginBottom: 15,
-        marginTop:3,
-        padding:10,
-        width:320,
-        fontSize:18,
-        color:"#1a1a1a",
-        borderRadius:4
+        borderWidth: 5,
+        marginBottom: 30,
+        marginTop:2,
+        padding:15,
+        width:350,
+        fontSize:25,
+        color:"black",
+        borderRadius:15
     }
 });
 

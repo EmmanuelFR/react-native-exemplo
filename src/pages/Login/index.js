@@ -25,15 +25,24 @@ function Login (){
             <MeuText fontSize= {60} style={style.titulo}>Login</MeuText>
 
             <MeuInput 
+<<<<<<< Updated upstream
                 label="E-mail"
                 placeHolder="exemplo@exemplo.com"
                 comMascara={false}
+=======
+                label="E-mail ou Nome de Usuário"
+                placeHolder="Digite Aqui..."
+>>>>>>> Stashed changes
             ></MeuInput>
 
             <MeuInput 
                 label="Senha"
+<<<<<<< Updated upstream
                 placeHolder="123456"
                 comMascara={true}
+=======
+                placeHolder="********"
+>>>>>>> Stashed changes
             ></MeuInput>
 
             <View style={style.boxRecuperarSenha}>
@@ -67,9 +76,10 @@ const style = StyleSheet.create({
         flex:1,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#fff' // branca em hexadecimal
+        backgroundColor: 'pink'
     },
     titulo: {
+<<<<<<< Updated upstream
         // color: '#FF5722',
         // fontSize:60,
         fontWeight: '700',
@@ -85,6 +95,13 @@ const style = StyleSheet.create({
     // Pela estilização da cor e do tamanho
     recuperarSenha:{
         color: '#FF5722',
+=======
+        color: 'black',
+        fontSize:100,
+        fontWeight: '500',
+        textAlign: "center",
+        marginBottom: 30
+>>>>>>> Stashed changes
     }
 });
 
