@@ -16,16 +16,17 @@ const SuperButton = (props) => {
 const style = StyleSheet.create({
     button:{
         alignItems: 'center',
-        backgroundColor: '#FF5722',
+        backgroundColor: 'purple',
         padding:12,
         width:320,
-        borderRadius:4,
-        marginTop:5
+        borderRadius:15,
+        marginTop:5,
+        borderWidth: 2,
     },
     texto:{
-        fontSize:18,
-        color:"#fff",
-        fontWeight: 700
+        fontSize:23,
+        color:"pink",
+        fontWeight: 900
     }
 
 })
