@@ -17,8 +17,12 @@ export default function App() {
           name='Login'
           component={Login}
           options={{
-            title: ""
-          }}
+            title: "Tela de Login",
+            headerStyle:{
+              backgroundColor:"aquamarine"
+            }
+          }
+        }
           />
 
           <Stack.Screen 
@@ -26,9 +30,9 @@ export default function App() {
           component={Home}
           options={
             {
-              title: "",
+              title: "Página Principal",
               headerStyle:{
-                backgroundColor:"#FF5722"
+                backgroundColor:"aquamarine"
               }
             }
           }
@@ -39,11 +43,11 @@ export default function App() {
   );
 }
 
-const styles = StyleSheet.create({
-  // container: {
-  //   flex: 1,
-  //   backgroundColor: '#fff',
-  //   alignItems: 'center',
-  //   justifyContent: 'center',
-  // },
-});
+/*const styles = StyleSheet.create({
+   container: {
+     flex: 1,
+     backgroundColor: 'cyan',
+     alignItems: 'center',
+     justifyContent: 'center',
+   },
+});*/

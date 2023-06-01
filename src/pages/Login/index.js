@@ -15,10 +15,13 @@ function Login ({navigation}){
 
         // é aqui que vou tentar autenticar o usuario e fazer ele ir para as proximas telas.
 
-        let email = "fulano@gmail.com";
+        let email = "pedrinho123@gmail.com";
+        let senha = "melhorsenhadetodas"
+        let pais = "Brasil"
+        let alfabeto = "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z"
 
         // Navegando para a pagina de Home passando parametros
-        navigation.navigate('Home',{email, doritos: "Gosto muito!!!!!"});
+        navigation.navigate('Home',{email, senha, pais, alfabeto});
 
     }
 
@@ -35,23 +38,23 @@ function Login ({navigation}){
             <MeuText fontSize= {60} style={style.titulo}>Login</MeuText>
 
             <MeuInput 
-                label="E-mail"
-                placeHolder="exemplo@exemplo.com"
+                label="E-mail ou Nome de Usuário:"
+                placeHolder="Digite aqui"
                 comMascara={false}
             ></MeuInput>
 
             <MeuInput 
-                label="Senha"
-                placeHolder="123456"
+                label="Senha:"
+                placeHolder="********"
                 comMascara={true}
             ></MeuInput>
 
             <View style={style.boxRecuperarSenha}>
-                <Text style={style.recuperarSenha}>Recuperar senha</Text>
+                <Text style={style.recuperarSenha}>Esqueceu sua Senha? Recupere-a agora!</Text>
             </View>
 
             <SuperButton
-            value={"Entrar"}
+            value={"Continuar"}
             acao={logar}
             ></SuperButton>
 
@@ -77,24 +80,25 @@ const style = StyleSheet.create({
         flex:1,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#fff' // branca em hexadecimal
+        backgroundColor: 'cyan'
     },
     titulo: {
-        // color: '#FF5722',
-        // fontSize:60,
-        fontWeight: '700',
+        color: 'darkblue',
+        fontSize:90,
+        fontWeight: '800',
         textAlign: "center",
-        marginBottom: 15
+        marginBottom: 20
     },
     // Será reponsavel por alinhar o texto.
     boxRecuperarSenha:{
-        width:300,
+        width:260,
         justifyContent: "flex-end",
         textAlign: "right",
+        fontSize:80
     },
     // Pela estilização da cor e do tamanho
     recuperarSenha:{
-        color: '#FF5722',
+        color: 'blue',
     }
 });
 
