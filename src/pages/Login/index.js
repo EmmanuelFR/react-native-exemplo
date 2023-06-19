@@ -55,7 +55,7 @@ function Login ({navigation}){
             </View>
 
             <SuperButton
-            value={"Entrar"}
+            value={"Continuar"}
             acao={logar}
             ></SuperButton>
         </Container>
