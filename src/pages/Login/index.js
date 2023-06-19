@@ -1,52 +1,53 @@
-import React from "react";
-import {Text, StyleSheet, View, Alert} from "react-native" 
+import React, { useState } from "react";
+import { Text, StyleSheet, View, Image, Alert } from "react-native" 
 import MeuInput from "../../components/MeuInput";
 import SuperButton from "../../components/SuperButton";
-
 import { Container , MeuText } from "../../styles/style-geral";
 
-// Todo componente no react native é um função ou uma classe
+const infoEntrada = {
+    usuario: "ODSWay",
+    senha: "2030"
+}
+
 function Login ({navigation}){
 
+    const [usuario, setUsuario] = useState("")
+    const [senha, setSenha] = useState("")
+
     const logar = () =>{
-        // 1° Obter email e senha e verificar se foram informados
-            // 1.1 se não tiver, mandar mensagem ao usuario
-        // 2° Verificar se esses dados existe na api, no backend.
-
-        // é aqui que vou tentar autenticar o usuario e fazer ele ir para as proximas telas.
-
-        let email = "pedrinho123@gmail.com";
-        let senha = "melhorsenhadetodas"
-        let pais = "Brasil"
-        let alfabeto = "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z"
-
-        // Navegando para a pagina de Home passando parametros
-        navigation.navigate('Home',{email, senha, pais, alfabeto});
-
-    }
-
-    // const salvar = () =>{
-    //     Alert.alert("Aqui vou Salvar no sistema");
-    // }
-
-    // const adicionar = () =>{
-    //     Alert.alert("Aqui vou Adicionar no sistema");
-    // }
+        let texto = "Neste APP, você terá acesso a informações básicas sobre os Objetivos de Desenvolvimento Sustentável (ODS), e conhecer as metas da ONU a serem alcançadas mundialmente, até o ano de 2030."
+        
+        if(!usuario || !senha){
+            Alert.alert('Para prosseguir, digite usuário e senha.');
+        }else if(usuario !== infoEntrada.usuario || senha !== infoEntrada.senha){
+            Alert.alert('Usuário ou senha incorretos, tente novamente.');
+        }else{
+            navigation.navigate('Home',{texto});
+        }
+ }
 
     return (
         <Container style={style.boxLogin}>
+            
+            <Image 
+            source= {require ('../../../assets/ODS-Way.png')}
+            style= {{width: 300, height: 300, borderRadius: 150}}>
+            </Image>
+
             <MeuText fontSize= {60} style={style.titulo}>Login</MeuText>
 
             <MeuInput 
                 label="E-mail ou Nome de Usuário:"
                 placeHolder="Digite aqui"
                 comMascara={false}
+                setValor= {setUsuario}
             ></MeuInput>
 
             <MeuInput 
                 label="Senha:"
                 placeHolder="********"
                 comMascara={true}
+                setValor= {setSenha}
             ></MeuInput>
 
             <View style={style.boxRecuperarSenha}>
@@ -54,23 +55,9 @@ function Login ({navigation}){
             </View>
 
             <SuperButton
-            value={"Continuar"}
+            value={"Entrar"}
             acao={logar}
             ></SuperButton>
-
-           {/* <SuperButton
-            value={"Salvar"}
-            acao={salvar}
-            >
-            </SuperButton>
-
-            <SuperButton
-            value={"Adicionar"}
-            acao={adicionar}
-            >
-            </SuperButton> */}
-
-
         </Container>
     );
 }
@@ -80,25 +67,23 @@ const style = StyleSheet.create({
         flex:1,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'cyan'
+        backgroundColor: '#3AE1AF'
     },
     titulo: {
-        color: 'darkblue',
-        fontSize:90,
-        fontWeight: '800',
+        color: '#ffffff',
+        fontSize:50,
+        fontWeight: 'bold',
         textAlign: "center",
-        marginBottom: 20
+        marginBottom: 50
     },
-    // Será reponsavel por alinhar o texto.
     boxRecuperarSenha:{
         width:260,
         justifyContent: "flex-end",
         textAlign: "right",
-        fontSize:80
+        fontSize:50
     },
-    // Pela estilização da cor e do tamanho
     recuperarSenha:{
-        color: 'blue',
+        color: '#000000',
     }
 });
 

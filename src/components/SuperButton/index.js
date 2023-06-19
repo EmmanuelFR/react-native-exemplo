@@ -5,7 +5,8 @@ const SuperButton = (props) => {
 
     return (
         <View style={style.container}>
-            <TouchableOpacity style={style.button}
+            <TouchableOpacity
+            style={style.button}
             onPress={props.acao}>
                 <Text style={style.texto}>{props.value}</Text>
             </TouchableOpacity>
@@ -16,17 +17,18 @@ const SuperButton = (props) => {
 const style = StyleSheet.create({
     button:{
         alignItems: 'center',
-        backgroundColor: 'blue',
+        backgroundColor: '#A0DBAD',
         padding:15,
-        width:350,
+        width:160,
+        height:69,
         borderRadius:15,
         marginTop:10,
-        borderWidth:3
+        borderWidth:1
     },
     texto:{
         fontSize:25,
-        color:"aquamarine",
-        fontWeight: 900
+        color:"#000000",
+        fontWeight: "bold",
     }
 
 })

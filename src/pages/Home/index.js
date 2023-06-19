@@ -1,17 +1,38 @@
 import React from "react";
-import { Text } from "react-native";
-
+import { Text, Image, StyleSheet, ScrollView } from "react-native";
 import { Container } from "../../styles/style-geral";
+import SuperButton from "../../components/SuperButton";
 
+function Home({navigation, route}){
+    
+    const avancar = () =>{
 
-export default function Home({route}){
+        navigation.navigate('Menu');
+    }
+
     return (
-        <Container>
-            <Text>Bem-vindo(a) de volta, {route.params.email}!</Text>
-            <Text>Sua senha é: {route.params.senha}.</Text>
-            <Text>Você mora no país: {route.params.pais}.</Text>
-            <Text>Confira o alfabeto abaixo: </Text>
-            <Text>{route.params.alfabeto}</Text>
-        </Container>
+            <Container style={styleHome.fundoHome}>
+            
+            <Text style={{textAlign:'center', margin: 10, fontSize: 20, fontWeight: '100', marginBottom: 60}}>{route.params.texto}</Text>
+            
+            <Image
+            source= {require ('../../../assets/ODS-explicacao.jpg')}
+            style={{width: 294, height: 311, borderRadius: 15, marginBottom: 60}}>
+            </Image>
+            
+            <SuperButton
+            value={"Avançar"}
+            acao={avancar}>
+            </SuperButton>
+
+            </Container>
     )
 }
+
+const styleHome = StyleSheet.create({
+    fundoHome: {
+        backgroundColor: '#3AE1AF'
+    },
+});
+
+export default Home;

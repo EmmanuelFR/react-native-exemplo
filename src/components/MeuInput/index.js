@@ -5,11 +5,12 @@ const MeuInput = (props) => {
 
     return (
         <SafeAreaView>
-            <Text>{props.label}</Text>
+            <Text style= {{marginLeft: 10, fontWeight: '400', fontSize: 15}}>{props.label}</Text>
             <TextInput
             style={style.input}
-             placeholder={props.placeHolder}
-             secureTextEntry={props.comMascara}
+            placeholder={props.placeHolder}
+            secureTextEntry={props.comMascara}
+            onChangeText={valor => props.setValor(valor)}
             ></TextInput>
         </SafeAreaView>
     );
@@ -17,14 +18,16 @@ const MeuInput = (props) => {
 
 const style = StyleSheet.create({
     input: {
-        borderWidth: 5,
-        marginBottom: 20,
-        marginTop:1,
-        padding:20,
-        width:350,
-        fontSize:23,
+        borderWidth: 1,
+        marginBottom: 15,
+        marginTop:0,
+        padding:10,
+        width:360,
+        height: 69,
+        fontSize:20,
         color:"black",
-        borderRadius:15
+        borderRadius:15,
+        backgroundColor: '#ffffff'
     }
 });
 
